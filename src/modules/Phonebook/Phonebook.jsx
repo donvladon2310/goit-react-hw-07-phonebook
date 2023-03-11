@@ -6,9 +6,9 @@ import ContactForm from "./ContactForm/ContactForm";
 import { useSelector, useDispatch } from "react-redux";
 
 import { setFilter } from "redux/filter/filter-slice";
-import { getAllContacts, getFilteredContacts } from "redux/contacts/contacts-selectors";
+import { getFilteredContacts } from "redux/contacts/contacts-selectors";
 import { getFilter } from "redux/filter/filter-selectors";
-import { fetchAllContacts, fetchAddContact, fetchDeleteContact } from "redux/contacts/contacts-operatins";
+import { fetchAllContact, fetchAddContact, fetchDeleteContact } from "redux/contacts/contacts-operatins";
 
 const Phonebook = () => {
 
@@ -18,14 +18,8 @@ const Phonebook = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchAllContacts())
+        dispatch(fetchAllContact())
     }, [dispatch])
-
-    useEffect(() => {
-        localStorage.setItem("my-contacts", JSON.stringify(allContacts))
-    }, [allContacts])
-
-
 
     const onAddContact = ({ name, number }) => {
         dispatch(fetchAddContact({ name, number }));
