@@ -10,7 +10,7 @@ export const getAllContacts = async () => {
 }
 
 export const addContact = async (data) => {
-    const { data: result } = await contactsInstance.post("./", data);
+    const { data: result } = await contactsInstance.post("/", data);
     return result;
 }
 
