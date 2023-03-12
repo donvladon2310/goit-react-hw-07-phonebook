@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setFilter } from "redux/filter/filter-slice";
 import { getFilteredContacts } from "redux/contacts/contacts-selectors";
 import { getFilter } from "redux/filter/filter-selectors";
-import { fetchAllContact, fetchAddContact, fetchDeleteContact } from "redux/contacts/contacts-operatins";
+import { fetchAllContacts, fetchAddContact, fetchDeleteContact } from "redux/contacts/contacts-operatins";
 
 const Phonebook = () => {
 
@@ -18,7 +18,7 @@ const Phonebook = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchAllContact())
+        dispatch(fetchAllContacts())
     }, [dispatch])
 
     const onAddContact = ({ name, number }) => {
