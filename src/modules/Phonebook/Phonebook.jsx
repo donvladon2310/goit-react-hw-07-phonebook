@@ -44,7 +44,7 @@ const Phonebook = () => {
                 <div>
                     <h4>Contacts</h4>
                     <Filter value={filter} handelChange={handelFilter} />
-                    <ContactList removeContact={onRemoveContact} contacts={filteredContacts} />
+                    <ContactList removeContact={onRemoveContact} items={filteredContacts} />
                 </div>
             </div>
         </div>
