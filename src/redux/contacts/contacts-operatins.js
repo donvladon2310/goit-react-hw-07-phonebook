@@ -10,13 +10,13 @@ export const fetchAllContact = createAsyncThunk(
             return data;
         }
         catch ({ response }) {
-            return thunkApi.rejectWithValue(response.data.message)
+            return thunkApi.rejectWithValue(response.data)
         }
     }
 )
 
 export const fetchAddContact = createAsyncThunk(
-    "contacts/fetch-add",
+    "contacts/add",
     async (data, { rejectWithValue }) => {
         try {
             const result = await api.addContact(data);
@@ -27,7 +27,7 @@ export const fetchAddContact = createAsyncThunk(
         }
     },
     {
-        condition: ({ name }, { getState }) => {
+        condition: (name, { getState }) => {
             const { contacts } = getState();
             const normName = name.toLowerCase();
             const result = contacts.items.find(({ name }) => {

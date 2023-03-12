@@ -14,6 +14,6 @@ export default Filter;
 
 
 
-Filter.PropTypes = {
+Filter.propTypes = {
     handelChange: PropTypes.func.isRequired,
 }

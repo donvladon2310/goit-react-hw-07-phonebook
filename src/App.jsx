@@ -1,15 +1,15 @@
 
 import Phonebook from './modules/Phonebook/Phonebook';
+import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
-import { store, persistor } from 'redux/store';
+import { store } from 'redux/store';
 
 export const App = () => {
   return (
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
+      <BrowserRouter basename="/goit-react-hw-07-phonebook">
         <Phonebook />
-      </PersistGate>
+      </BrowserRouter>
     </Provider>
   );
 };

@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 
 
 const ContactList = ({ removeContact, items }) => {
-    const contact = items.map(({ id, name, number }) => <li key={id}>{name}: {number}
+    const contacts = items.map(({ id, name, number }) => <li key={id}>{name}: {number}
         <button onClick={() => removeContact(id)} type="button">delete</button></li>)
 
     return (
         <ul>
-            {contact}
+            {contacts}
         </ul>
     )
 }
