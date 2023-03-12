@@ -27,7 +27,7 @@ export const fetchAddContact = createAsyncThunk(
         }
     },
     {
-        condition: (name, { getState }) => {
+        condition: ({ name }, { getState }) => {
             const { contacts } = getState();
             const normName = name.toLowerCase();
             const result = contacts.items.find(({ name }) => {

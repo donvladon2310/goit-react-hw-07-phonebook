@@ -20,7 +20,7 @@ const ContactForm = ({ onSubmit }) => {
     const handelSubmit = e => {
         e.preventDefault();
         onSubmit({ name, phone });
-        setState({ name: "", phone: "", })
+        setState({ name: "", phone: "", });
     }
 
     const { name, phone } = state;
