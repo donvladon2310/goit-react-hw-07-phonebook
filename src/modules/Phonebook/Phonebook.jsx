@@ -21,8 +21,8 @@ const Phonebook = () => {
         dispatch(fetchAllContacts())
     }, [dispatch])
 
-    const onAddContact = ({ name, number }) => {
-        dispatch(fetchAddContact({ name, number }));
+    const onAddContact = ({ name, phone }) => {
+        dispatch(fetchAddContact({ name, phone }));
     }
 
     const onRemoveContact = (id) => {

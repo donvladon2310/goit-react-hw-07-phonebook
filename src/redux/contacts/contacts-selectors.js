@@ -4,8 +4,8 @@ export const getFilteredContacts = ({ contacts, filter }) => {
         return contacts.items
     }
     const normFilter = filter.toLowerCase()
-    const result = contacts.items.filter(({ name, number }) => {
-        return (name.toLowerCase().includes(normFilter) || number.toLowerCase().includes(normFilter))
+    const result = contacts.items.filter(({ name, phone }) => {
+        return (name.toLowerCase().includes(normFilter) || phone.toLowerCase().includes(normFilter))
     })
     return result;
 }

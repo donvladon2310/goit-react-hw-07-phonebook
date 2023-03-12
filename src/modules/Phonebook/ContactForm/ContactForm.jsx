@@ -5,7 +5,7 @@ import PropTyper from "prop-types";
 const ContactForm = ({ onSubmit }) => {
     const [state, setState] = useState({
         name: "",
-        number: "",
+        phone: "",
     });
 
     const handelChange = ({ target }) => {
@@ -19,11 +19,11 @@ const ContactForm = ({ onSubmit }) => {
 
     const handelSubmit = e => {
         e.preventDefault();
-        onSubmit({ name, number });
-        setState({ name: "", number: "", })
+        onSubmit({ name, phone });
+        setState({ name: "", phone: "", })
     }
 
-    const { name, number } = state;
+    const { name, phone } = state;
 
     return (
         <form onSubmit={handelSubmit}>
@@ -42,9 +42,9 @@ const ContactForm = ({ onSubmit }) => {
             <div>
                 <input
                     onChange={handelChange}
-                    value={number}
+                    value={phone}
                     type="tel"
-                    name="number"
+                    name="phone"
                     pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
                     title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                     required
